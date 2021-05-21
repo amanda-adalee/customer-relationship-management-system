@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #17202A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReportsAppointmentsController">
+    <children>
+        <Button layoutX="50.0" layoutY="275.0" mnemonicParsing="false" onAction="#customersFilteredByCountriesButton" prefHeight="50.0" prefWidth="160.0" rotate="270.0" style="-fx-background-color: #9B59B6;" text="Customers Filtered by Countries" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
+        <Button layoutX="50.0" layoutY="445.0" mnemonicParsing="false" onAction="#appointmentsFilteredByContactsButton" prefHeight="50.0" prefWidth="160.0" rotate="270.0" style="-fx-background-color: #9B59B6;" text="Appointments Filtered By Contacts" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Button>
+        <Text fill="#9b59b6" layoutX="14.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REPORTS">
+            <font>
+                <Font name="Tahoma Bold" size="24.0" />
+            </font></Text>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="335.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Assets/icon_calendar.png" />
+            </image>
+        </ImageView>
+        <Button alignment="BOTTOM_CENTER" layoutX="225.0" layoutY="-11.0" mnemonicParsing="false" onAction="#customerInformationButton" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #9B59B6;" text="Customer Information" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button alignment="BOTTOM_CENTER" layoutX="388.0" layoutY="-11.0" mnemonicParsing="false" onAction="#appointmentsButton" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #9B59B6;" text="Appointments" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <ImageView accessibleText="Appointments" fitHeight="40.0" fitWidth="44.0" layoutX="175.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Assets/icon_customer.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </ImageView>
+        <AnchorPane layoutX="14.0" layoutY="88.0" prefHeight="5.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" />
+        <ComboBox fx:id="monthComboBox" layoutX="323.0" layoutY="120.0" onAction="#onActionMonthComboBox" prefWidth="150.0" promptText="Filter By Month" style="-fx-background-color: white;" />
+        <Text fill="WHITE" layoutX="30.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="APPOINTMENTS BY TYPE AND MONTH">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Text>
+      <TableView fx:id="appointmentTableView" layoutX="155.0" layoutY="193.0" prefHeight="375.0" prefWidth="240.0" style="-fx-selection-bar: #9B59B6; -fx-alignment: CENTER;">
+        <columns>
+          <TableColumn fx:id="typeColumn" minWidth="120.0" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-alignement: CENTER;" text="Type" />
+            <TableColumn fx:id="amountColumn" minWidth="120.0" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Amount" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>

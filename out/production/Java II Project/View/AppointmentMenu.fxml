@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #17202A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AppointmentController">
+    <children>
+        <Text fx:id="appointmentsText" fill="#9b59b6" layoutX="15.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="APPOINTMENTS">
+            <font>
+                <Font name="Tahoma Bold" size="24.0" />
+            </font></Text>
+        <TableView fx:id="appointmentsTableView" layoutX="15.0" layoutY="109.0" prefHeight="428.0" prefWidth="969.0" style="-fx-selection-bar: #9B59B6;">
+            <columns>
+            <TableColumn fx:id="appointmentId" prefWidth="100.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Appointment Id" />
+                <TableColumn fx:id="customerId" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Customer Id" />
+                <TableColumn fx:id="customerName" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Customer Name" />
+                <TableColumn fx:id="appointmentTitle" prefWidth="53.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Title" />
+                <TableColumn fx:id="appointmentDescription" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Description" />
+                <TableColumn fx:id="appointmentLocation" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Location" />
+                <TableColumn fx:id="appointmentType" prefWidth="103.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Type" />
+                <TableColumn fx:id="appointmentContact" prefWidth="90.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Contact" />
+            <TableColumn fx:id="appointmentStartDate" prefWidth="73.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Start Date" />
+            <TableColumn fx:id="appointmentStartTime" prefWidth="65.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Start Time" />
+            <TableColumn fx:id="appointmentEndDate" prefWidth="72.0" style="-fx-background-color: white; -fx-text-fill: black;" text="End Date" />
+            <TableColumn fx:id="appointmentEndTime" prefWidth="65.0" style="-fx-background-color: white; -fx-text-fill: black;" text="End Time" />
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_RIGHT" layoutX="782.0" layoutY="549.0" prefHeight="31.0" prefWidth="209.0" spacing="10.0">
+            <children>
+                <Button fx:id="addAppointmentButton" mnemonicParsing="false" onAction="#addAppointment" prefWidth="60.0" style="-fx-background-color: #9B59B6; -fx-background-radius: 90;" text="+ Add" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="updateAppointmentButton" mnemonicParsing="false" onAction="#updateAppointment" prefWidth="60.0" style="-fx-background-color: #9B59B6; -fx-background-radius: 90;" text="Update" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Button>
+                <Button fx:id="deleteAppointmentButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#deleteAppointments" prefWidth="60.0" style="-fx-background-color: #9B59B6; -fx-background-radius: 90;" text="Delete" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Button>
+            </children>
+        </HBox>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="857.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Assets/icon_user.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="customerInformationButton" alignment="BOTTOM_CENTER" layoutX="741.0" layoutY="-11.0" mnemonicParsing="false" onAction="#customerInformationButton" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #9B59B6;" text="Customer Information" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="reportsButton" alignment="BOTTOM_CENTER" layoutX="906.0" layoutY="-11.0" mnemonicParsing="false" onAction="#reportsButton" prefHeight="51.0" prefWidth="80.0" style="-fx-background-color: #9B59B6;" text="Reports" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <ImageView accessibleText="Appointments" fitHeight="40.0" fitWidth="44.0" layoutX="690.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Assets/icon_customer.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </ImageView>
+        <AnchorPane layoutX="14.0" layoutY="72.0" prefHeight="4.0" prefWidth="196.0" style="-fx-background-color: #ffffff;" />
+      <HBox layoutX="21.0" layoutY="551.0" prefHeight="29.0" prefWidth="196.0" spacing="10.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter by:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="monthRadioSelected" mnemonicParsing="false" onAction="#onActionMonthButton" selected="true" text="Month" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="apptViewToggle" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="weekRadioSelected" mnemonicParsing="false" onAction="#onActionWeekButton" text="Week" textFill="WHITE" toggleGroup="$apptViewToggle">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>

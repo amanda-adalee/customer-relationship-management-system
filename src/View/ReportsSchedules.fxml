@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="975.0" style="-fx-background-color: #17202A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReportsSchedulesController">
+    <children>
+      <Button layoutX="-33.0" layoutY="213.0" mnemonicParsing="false" onAction="#customersFilteredByCountriesButton" prefHeight="50.0" prefWidth="160.0" rotate="270.0" style="-fx-background-color: #9B59B6;" text="Customers Filtered by Countries" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="-33.0" layoutY="386.0" mnemonicParsing="false" onAction="#totalCustomerAppointmentsButton" prefHeight="50.0" prefWidth="160.0" rotate="270.0" style="-fx-background-color: #9B59B6;" text="Appointments By Type and Months" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+        <Text fill="#9b59b6" layoutX="72.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REPORTS">
+            <font>
+                <Font name="Tahoma Bold" size="24.0" />
+            </font></Text>
+        <TableView fx:id="appointmentsTableView" layoutX="69.0" layoutY="134.0" prefHeight="428.0" prefWidth="880.0" style="-fx-selection-bar: #9B59B6;">
+            <columns>
+            <TableColumn fx:id="appointmentId" prefWidth="100.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Appointment Id" />
+                <TableColumn fx:id="customerId" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Customer Id" />
+                <TableColumn fx:id="customerName" prefWidth="120.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Customer Name" />
+                <TableColumn fx:id="appointmentTitle" prefWidth="53.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Title" />
+                <TableColumn fx:id="appointmentDescription" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Description" />
+                <TableColumn fx:id="appointmentLocation" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Location" />
+                <TableColumn fx:id="appointmentType" prefWidth="103.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Type" />
+            <TableColumn fx:id="appointmentStartDate" prefWidth="73.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Start Date" />
+            <TableColumn fx:id="appointmentStartTime" prefWidth="65.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Start Time" />
+            <TableColumn fx:id="appointmentEndDate" prefWidth="72.0" style="-fx-background-color: white; -fx-text-fill: black;" text="End Date" />
+            <TableColumn fx:id="appointmentEndTime" prefWidth="65.0" style="-fx-background-color: white; -fx-text-fill: black;" text="End Time" />
+            </columns>
+        </TableView>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="803.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Assets/icon_calendar.png" />
+            </image>
+        </ImageView>
+        <Button alignment="BOTTOM_CENTER" layoutX="681.0" layoutY="-11.0" mnemonicParsing="false" onAction="#customerInformationButton" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #9B59B6;" text="Customer Information" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button alignment="BOTTOM_CENTER" layoutX="853.0" layoutY="-11.0" mnemonicParsing="false" onAction="#appointmentsButton" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #9B59B6;" text="Appointments" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <ImageView accessibleText="Appointments" fitHeight="40.0" fitWidth="44.0" layoutX="631.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Assets/icon_customer.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </ImageView>
+        <AnchorPane layoutX="72.0" layoutY="54.0" prefHeight="5.0" prefWidth="114.0" style="-fx-background-color: #ffffff;" />
+      <ComboBox fx:id="contactComboBox" layoutX="803.0" layoutY="92.0" onAction="#onActionContactComboBox" prefWidth="150.0" promptText="Filter By Contact" style="-fx-background-color: white;" />
+      <Text fill="WHITE" layoutX="394.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="APPOINTMENTS FOR CONTACTS">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

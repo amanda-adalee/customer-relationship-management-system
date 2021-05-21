@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #17202A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerController">
+   <children>
+      <Text fx:id="customerInformationText" fill="#9b59b6" layoutX="15.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER INFORMATION">
+         <font>
+            <Font name="Tahoma Bold" size="24.0" />
+         </font></Text>
+      <TableView fx:id="customerTableView" layoutX="15.0" layoutY="109.0" prefHeight="333.0" prefWidth="873.0" style="-fx-selection-bar: #9b59b6;">
+        <columns>
+            <TableColumn fx:id="customerId" prefWidth="90.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Customer Id" />
+            <TableColumn fx:id="customerName" prefWidth="150.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Customer Name" />
+            <TableColumn fx:id="customerAddress" prefWidth="200.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Address" />
+            <TableColumn fx:id="customerDivision" prefWidth="140.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Division" />
+            <TableColumn fx:id="customerCountry" prefWidth="90.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Country" />
+            <TableColumn fx:id="customerPostalCode" prefWidth="90.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Postal Code" />
+          <TableColumn fx:id="customerPhoneNumber" prefWidth="110.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Phone Number" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT" layoutX="676.0" layoutY="455.0" prefHeight="31.0" prefWidth="209.0" spacing="10.0">
+         <children>
+            <Button fx:id="addCustomerButton" mnemonicParsing="false" onAction="#addCustomer" prefWidth="60.0" style="-fx-background-color: #9B59B6; -fx-background-radius: 90;" text="+ Add" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateCustomerButton" mnemonicParsing="false" onAction="#updateCustomer" prefWidth="60.0" style="-fx-background-color: #9B59B6; -fx-background-radius: 90;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="deleteCustomerButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#deleteCustomer" prefWidth="60.0" style="-fx-background-color: #9B59B6; -fx-background-radius: 90;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="753.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/icon_user.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="appointmentsButton" alignment="BOTTOM_CENTER" layoutX="639.0" layoutY="-11.0" mnemonicParsing="false" onAction="#appointmentsBttn" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #9B59B6;" text="Appointments" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="reportsButton" alignment="BOTTOM_CENTER" layoutX="806.0" layoutY="-11.0" mnemonicParsing="false" onAction="#reportsButton" prefHeight="51.0" prefWidth="80.0" style="-fx-background-color: #9B59B6;" text="Reports" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ImageView accessibleText="Appointments" fitHeight="40.0" fitWidth="44.0" layoutX="585.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/icon_calendar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <AnchorPane layoutX="14.0" layoutY="72.0" prefHeight="3.0" prefWidth="324.0" style="-fx-background-color: #ffffff;" />
+   </children>
+</AnchorPane>
