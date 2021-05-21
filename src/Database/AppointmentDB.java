@@ -100,7 +100,7 @@ public class AppointmentDB {
             ps.setString(7, UserDB.sessionUser.getUserName());
             ps.setString(8, UserDB.sessionUser.getUserName());
             ps.setInt(9, appointment.getCustomerId());
-            ps.setInt(10, appointment.getUserId());
+            ps.setInt(10, UserDB.sessionUser.getUserId());
             ps.setInt(11, appointment.getContactId());
 
             ps.execute();
@@ -178,7 +178,7 @@ public class AppointmentDB {
             ps.setTimestamp(6, endTimestamp);
             ps.setString(7, UserDB.sessionUser.getUserName());
             ps.setInt(8, appointment.getCustomerId());
-            ps.setInt(9, appointment.getUserId());
+            ps.setInt(9, UserDB.sessionUser.getUserId());
             ps.setInt(10, appointment.getContactId());
             ps.setInt(11, appointment.getAppointmentId());
 

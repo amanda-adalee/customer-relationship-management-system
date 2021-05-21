@@ -49,9 +49,6 @@ public class AppointmentModifyController implements Initializable {
     private TextField descriptionText;
 
     @FXML
-    private TextField UserIdText;
-
-    @FXML
     private ComboBox<Contact> contactComboBox;
 
     @FXML
@@ -114,7 +111,6 @@ public class AppointmentModifyController implements Initializable {
         String type = typeComboBox.getValue();
         String title = titleText.getText();
         String description = descriptionText.getText();
-        int userId = Integer.parseInt(UserIdText.getText());
         String contactName = contactComboBox.getValue().getContactName();
         int contactId = contactComboBox.getValue().getContactId();
         LocalDate startDate = startDateText.getValue();
@@ -130,7 +126,6 @@ public class AppointmentModifyController implements Initializable {
         tempAppointment.setType(type);
         tempAppointment.setTitle(title);
         tempAppointment.setDescription(description);
-        tempAppointment.setUserId(userId);
         tempAppointment.setContactName(contactName);
         tempAppointment.setContactId(contactId);
         tempAppointment.setStartDate(startDate);
@@ -197,9 +192,6 @@ public class AppointmentModifyController implements Initializable {
             isInputValid = false;
         }
         if(titleText.getLength() == 0){
-            isInputValid = false;
-        }
-        if(UserIdText.getLength() == 0){
             isInputValid = false;
         }
         return isInputValid;
@@ -322,7 +314,6 @@ public class AppointmentModifyController implements Initializable {
 
         appointmentIdText.setText(Integer.toString(appointment.getAppointmentId()));
         customerIdText.setText(Integer.toString(appointment.getCustomerId()));
-        UserIdText.setText(Integer.toString(appointment.getUserId()));
         titleText.setText(appointment.getTitle());
         descriptionText.setText(appointment.getDescription());
         locationText.setText(appointment.getLocation());

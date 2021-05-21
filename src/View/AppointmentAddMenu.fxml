@@ -126,11 +126,5 @@
             <Font name="System Bold" size="12.0" />
          </font></Text>
       <ComboBox fx:id="endTimeComboBox" layoutX="508.0" layoutY="292.0" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: white;" />
-      <Text fill="#9b59b6" layoutX="322.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Id:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Text>
-      <TextField fx:id="UserIdText" layoutX="382.0" layoutY="123.0" promptText="User Id" />
     </children>
 </AnchorPane>

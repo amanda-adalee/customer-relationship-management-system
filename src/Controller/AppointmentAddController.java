@@ -56,9 +56,6 @@ public class AppointmentAddController implements Initializable {
     private TextField descriptionText;
 
     @FXML
-    private TextField UserIdText;
-
-    @FXML
     private ComboBox<Contact> contactComboBox;
 
     @FXML
@@ -104,7 +101,6 @@ public class AppointmentAddController implements Initializable {
         String description = descriptionText.getText();
         String contactName = contactComboBox.getValue().getContactName();
         int contactId = contactComboBox.getValue().getContactId();
-        int userId = Integer.parseInt(UserIdText.getText());
         LocalDate startDate = startDateText.getValue();
         LocalDate endDate = endDateText.getValue();
         LocalTime startTime = startTimeComboBox.getValue();
@@ -119,7 +115,6 @@ public class AppointmentAddController implements Initializable {
         tempAppointment.setDescription(description);
         tempAppointment.setContactName(contactName);
         tempAppointment.setContactId(contactId);
-        tempAppointment.setUserId(userId);
         tempAppointment.setStartDate(startDate);
         tempAppointment.setEndDate(endDate);
         tempAppointment.setStartTime(startTime);
@@ -186,9 +181,7 @@ public class AppointmentAddController implements Initializable {
         if(titleText.getLength() == 0){
             isInputValid = false;
         }
-        if(UserIdText.getLength() == 0){
-            isInputValid = false;
-        }
+
         return isInputValid;
     }
 
