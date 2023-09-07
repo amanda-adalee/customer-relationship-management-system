@@ -14,7 +14,7 @@ Username: "test" <br>
 Password: "test"
 
 ## Author
-Amanda Arreola, aarreo3@wgu.edu
+Amanda Arreola
 
 
 
